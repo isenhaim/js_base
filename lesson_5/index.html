@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson №5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="magic.css/dist/magic.min.css"> </head>
+
+<body>
+    <!--
+       3. a. Сделайте модальное (появляющееся и исчезающее) окно
+          b. (не обязательное задание) Сделайте анимацию при появлении и исчезании.
+          
+       Осилил только появление.
+-->
+    <button class="btn-opn">Открыть модальное окно</button>
+    <div class="modal magictime hidden">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laborum animi aut iste magnam, modi sit doloribus amet saepe omnis quibusdam commodi. Officia quos rerum cupiditate. Praesentium, nemo, sint nulla, obcaecati suscipit qui doloribus laudantium quo quam vel cum doloremque quas dolorem provident vitae id ipsum dicta ex. Optio labore doloremque quibusdam ratione perferendis eius animi. Nobis necessitatibus provident ipsum, error fugiat explicabo quasi laudantium placeat autem tenetur in amet, adipisci beatae a velit. Neque eveniet cumque mollitia, cum eius nam pariatur laudantium harum asperiores odit rerum repellendus quasi! Velit, est. Dolorum voluptatibus error ab obcaecati similique, quos voluptate, inventore.</p>
+        <button class="btn-cls">Закрыть окно</button>
+    </div>
+    <div class="modal-layer hidden"></div>
+    <script>
+        'use strict';
+        const buttonOpen = document.querySelector('.btn-opn');
+        const buttonClose = document.querySelector('.btn-cls');
+        const modal = document.querySelector('.modal');
+        const layer = document.querySelector('.modal-layer');
+        buttonOpen.addEventListener('click', function (event) {
+            modal.classList.add('puffIn');
+            modal.classList.toggle('hidden');
+            //            buttonOpen.classList.toggle('hidden');
+            layer.classList.toggle('hidden');
+        });
+        buttonClose.addEventListener('click', function (event) {
+            modal.classList.toggle('hidden');
+            //            buttonOpen.classList.toggle('hidden');
+            layer.classList.toggle('hidden');
+        });
+    </script>
+    <div class="card">
+        <div class="product">
+            <div class="productName">Lorem ipsum1.</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate at provident iusto hic unde perferendis sunt, reiciendis earum ipsum, possimus veniam, id dolore cumque modi, molestias recusandae tempora esse iure expedita aut a reprehenderit quasi aperiam! Aperiam debitis, magni est saepe quae pariatur, aliquid porro officia voluptatem veritatis! Voluptatem deserunt soluta quod dolore eius praesentium quam quia incidunt perferendis.</div> <img src="http://unsplash.it/200/300?random&gravity=center" alt="">
+            <button class="key">Подробнее</button>
+        </div>
+        <div class="product">
+            <div class="productName">Lorem ipsum2.</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate at provident iusto hic unde perferendis sunt, reiciendis earum ipsum, possimus veniam, id dolore cumque modi, molestias recusandae tempora esse iure expedita aut a reprehenderit quasi aperiam! Aperiam debitis, magni est saepe quae pariatur, aliquid porro officia voluptatem veritatis! Voluptatem deserunt soluta quod dolore eius praesentium quam quia incidunt perferendis.</div> <img src="http://unsplash.it/200/300?random&gravity=center" alt="">
+            <button class="key">Подробнее</button>
+        </div>
+        <div class="product">
+            <div class="productName">Lorem ipsum3.</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate at provident iusto hic unde perferendis sunt, reiciendis earum ipsum, possimus veniam, id dolore cumque modi, molestias recusandae tempora esse iure expedita aut a reprehenderit quasi aperiam! Aperiam debitis, magni est saepe quae pariatur, aliquid porro officia voluptatem veritatis! Voluptatem deserunt soluta quod dolore eius praesentium quam quia incidunt perferendis.</div> <img src="http://unsplash.it/200/300?random&gravity=center" alt="">
+            <button class="key">Подробнее</button>
+        </div>
+        <div class="product">
+            <div class="productName">Lorem ipsum4.</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate at provident iusto hic unde perferendis sunt, reiciendis earum ipsum, possimus veniam, id dolore cumque modi, molestias recusandae tempora esse iure expedita aut a reprehenderit quasi aperiam! Aperiam debitis, magni est saepe quae pariatur, aliquid porro officia voluptatem veritatis! Voluptatem deserunt soluta quod dolore eius praesentium quam quia incidunt perferendis.</div> <img src="http://unsplash.it/200/300?random&gravity=center" alt="">
+            <button class="key">Подробнее</button>
+        </div>
+    </div>
+    <script>
+        'use strict';
+        const descriptions = document.querySelectorAll('.desc');
+        const buttons = document.querySelectorAll('.key');
+        descriptions.forEach(element => element.classList.toggle('hidden'));
+        buttons.forEach(element => element.addEventListener('click', function (event) {
+            element.parentNode.querySelector('img').classList.toggle('hidden');
+            element.parentNode.querySelector('.desc').classList.toggle('hidden');
+            if (element.innerText === 'Подробнее') {
+                element.innerText = 'Отмена';
+            }
+            else {
+                element.innerText = 'Подробнее';
+            };
+        }));
+    </script>
+</body>
+
+</html>

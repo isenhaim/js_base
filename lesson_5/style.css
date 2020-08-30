@@ -1,0 +1,62 @@
+body {
+    background-color: dimgray;
+}
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    width: 600px;
+    height: 400px;
+    margin: 10% auto;
+    border: solid black 3px;
+    padding: 10px;
+    background-color: aliceblue;
+    z-index: 100;
+}
+
+.modal-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.btn-opn {
+    margin-bottom: 40px;
+}
+
+.btn-cls {
+    
+}
+
+.product {
+    width: 200px;
+    height: 300px;
+    float: left;
+    margin: 5px;
+}
+
+.key {
+    margin: 5px;
+}
+
+.productName {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.desc {
+    text-align: justify;
+}
